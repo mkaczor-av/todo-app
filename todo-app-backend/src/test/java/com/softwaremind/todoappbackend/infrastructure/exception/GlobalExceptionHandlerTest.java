@@ -52,7 +52,7 @@ class GlobalExceptionHandlerTest {
     @Test
     void shouldHandleBusinessException() {
         // Given
-        final var ruleForCategoryExistsException = new BusinessException("test message", HttpStatus.CONFLICT) {
+        final var sampleBusinessException = new BusinessException("test message", HttpStatus.CONFLICT) {
             @Override
             public HttpStatus getHttpStatus() {
                 return super.getHttpStatus();
@@ -61,7 +61,7 @@ class GlobalExceptionHandlerTest {
         final var globalExceptionHandler = new GlobalExceptionHandler();
 
         // When
-        final var responseEntity = globalExceptionHandler.handleBusinessException(ruleForCategoryExistsException);
+        final var responseEntity = globalExceptionHandler.handleBusinessException(sampleBusinessException);
 
         // Then
         final var problemDetail = (ProblemDetail) Objects.requireNonNull(responseEntity).getBody();

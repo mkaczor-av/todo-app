@@ -72,7 +72,7 @@ class TodoFacadeTest {
         }
 
         @Test
-        void shouldThrowExceptionWhenRuleDoesNotExist() {
+        void shouldThrowExceptionWhenTodoDoesNotExist() {
             // Given
             final var todoFacade = new TodoConfiguration().todoFacade();
             final var nonExistentTodoUuid = UUID.fromString("b37460dc-8881-45b4-8240-a8bfde211a52");
@@ -136,7 +136,7 @@ class TodoFacadeTest {
         }
 
         @Test
-        void shouldThrowExceptionWhenRuleDoesNotExist() {
+        void shouldThrowExceptionWhenTodoDoesNotExist() {
             // Given
             final var todoFacade = new TodoConfiguration().todoFacade();;
             final var nonExistentTodoUuid = UUID.fromString("b37460dc-8881-45b4-8240-a8bfde211a52");
