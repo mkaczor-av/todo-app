@@ -2,7 +2,7 @@
 
 
 ### Stack:
-- PostgrSQL
+- PostgreSQL
 - Spring Boot 3 (JDK 21)
 - Angular 17
 
