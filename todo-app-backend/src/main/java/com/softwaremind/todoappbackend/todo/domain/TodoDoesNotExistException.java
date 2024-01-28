@@ -8,9 +8,6 @@ import java.util.UUID;
 class TodoDoesNotExistException extends BusinessException {
 
     TodoDoesNotExistException(UUID todoUuid) {
-        super(
-                String.format("Todo with id %s does not exist", todoUuid),
-                HttpStatus.NOT_FOUND
-        );
+        super(String.format("Todo with id %s does not exist", todoUuid), HttpStatus.NOT_FOUND);
     }
 }
