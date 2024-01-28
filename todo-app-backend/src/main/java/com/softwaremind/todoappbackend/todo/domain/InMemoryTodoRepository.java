@@ -26,7 +26,6 @@ class InMemoryTodoRepository implements TodoRepository {
 
     @Override
     public Page<Todo> findAll(Pageable pageable, String name) {
-        // TODO mk filer + pagination
         return new PageImpl<>(db.values().stream().toList(), pageable, 10);
     }
 

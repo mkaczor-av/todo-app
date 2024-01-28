@@ -28,6 +28,7 @@ cd todo-app-backend
 Run the frontend:
 ```
 cd todo-app-frontend
+npm install
 ng serve
 ```
 
