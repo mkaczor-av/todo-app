@@ -1,0 +1,9 @@
+.idea
+*.iws
+*.iml
+*.ipr
+
+todo-app-backend/build
+
+todo-app-frontend/.angular/cache
+todo-app-frontend/node_modules

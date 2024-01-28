@@ -1,0 +1,10 @@
+.create-todo-btn-container {
+  display: flex;
+  justify-content: center;
+}
+
+.todo-name-filter-container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+}

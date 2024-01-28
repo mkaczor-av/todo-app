@@ -1,0 +1,4 @@
+databaseChangeLog:
+  - include:
+      file: 001_todo_table_DDL.sql
+      relativeToChangelogFile: true

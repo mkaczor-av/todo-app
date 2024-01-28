@@ -1,0 +1,69 @@
+<div class="todos-table-container">
+  <p-table
+    [columns]="cols"
+    [value]="todos"
+    [lazy]="true"
+    [loading]="loading"
+    (onLazyLoad)="loadTodos($event)"
+    [paginator]="true"
+    [rows]="numberOfRows"
+    [totalRecords]="totalRecords"
+  >
+    <ng-template pTemplate="header" let-columns>
+      <tr>
+        <th *ngFor="let col of columns">
+          {{ col.header }}
+        </th>
+        <th>
+          Completed
+        </th>
+        <th>
+          Actions
+        </th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-todo let-columns="columns">
+      <tr>
+        <td *ngFor="let col of columns">
+          {{ todo[col.field] }}
+        </td>
+        <td>
+          <i *ngIf="todo.completed" class="pi pi-check" style="font-size: 2.5rem; color: green"></i>
+          <i *ngIf="!todo.completed" class="pi pi-times" style="font-size: 2.5rem; color: red"></i>
+        </td>
+        <td>
+          <p-inputSwitch
+            [(ngModel)]="todo['completed']"
+            id="completed"
+            class="completed-switch"
+            (onChange)="onCompletedSwitch($event, todo)"
+          >
+          </p-inputSwitch>
+          <p-button
+            label="Details"
+            [rounded]="true"
+            severity="secondary"
+            (onClick)="onGoToDetails(todo['uuid'])">
+          </p-button>
+          <p-button
+            label="Edit" [rounded]="true"
+            class="btn"
+            (onClick)="onEditTodo(todo)">
+          </p-button>
+          <p-button
+            label="Delete"
+            [rounded]="true"
+            severity="danger"
+            class="btn"
+            (onClick)="onDeleteTodo(todo['uuid'])">
+          </p-button>
+        </td>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="emptymessage">
+      <tr>
+        <td colspan="4">No todos found.</td>
+      </tr>
+    </ng-template>
+  </p-table>
+</div>

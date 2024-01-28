@@ -1,0 +1,33 @@
+<div class="create-todo-btn-container">
+  <p-button
+    label="Create todo"
+    [rounded]="true"
+    severity="success"
+    (onClick)="createTodo()"
+    size="large">
+  </p-button>
+</div>
+
+<div class="todo-name-filter-container">
+    <span class="p-float-label">
+    <input
+      id="name-filter"
+      type="text" pInputText
+      maxlength="30"
+      [(ngModel)]="nameFilter"
+      (ngModelChange)="onNameInputChange()" />
+    <label for="name-filter">Name filter</label>
+  </span>
+</div>
+
+<todo-datatable
+  [loading]="this.loading"
+  [todos]="this.todos"
+  [totalRecords]="this.totalElements"
+  [numberOfRows]="this.numberOfRows"
+  (editTodo)="editTodo($event)"
+  (deleteTodo)="deleteTodo($event)"
+  (pageChange)="pageChange($event)"
+  (completedSwitch)="onCompletedSwitch($event)"
+  (todoDetails)="todoDetails($event)">
+</todo-datatable>

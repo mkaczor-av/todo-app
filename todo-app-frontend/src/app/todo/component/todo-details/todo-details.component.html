@@ -1,0 +1,24 @@
+<p-card header="Todo details">
+  <div class="m-0">
+    <div class="todo-details-field">
+      <div class="flex flex-column gap-2">
+        <label for="name" class="field-label">Name</label>
+        <input id="name" type="text" pInputText [value]="todoDto?.name" [disabled]="true" maxlength="30"/>
+      </div>
+    </div>
+
+    <div class="todo-details-field">
+      <div class="flex flex-column gap-2">
+        <label for="description" class="field-label">Description</label>
+        <input id="description" type="text" pInputText [value]="todoDto?.description" [disabled]="true" maxlength="30"/>
+      </div>
+    </div>
+
+    <div class="todo-details-field">
+      <div class="flex flex-column gap-2">
+        <label for="completed" class="field-label">Completed</label>
+        <input id="completed" type="text" pInputText [value]="todoDto?.completed" [disabled]="true" maxlength="30"/>
+      </div>
+    </div>
+  </div>
+</p-card>

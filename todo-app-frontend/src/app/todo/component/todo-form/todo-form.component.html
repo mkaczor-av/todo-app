@@ -1,0 +1,25 @@
+<div class="todo-form-container">
+  <form [formGroup]="todoForm">
+    <div>
+      <div class="form-control">
+        <span class="p-float-label">
+          <input id="name" type="text" pInputText formControlName="name" maxlength="30"/>
+          <label for="name">Name</label>
+        </span>
+        <div *ngIf="todoFormControls.name.invalid && (todoFormControls.name.dirty || todoFormControls.name.touched)">
+          <span class="form-item-error" *ngIf="todoFormControls.name.errors.required">
+            Name is required
+          </span>
+        </div>
+      </div>
+      <div class="form-control">
+        <span class="p-float-label">
+          <input id="description" type="text" pInputText formControlName="description" maxlength="200"/>
+          <label for="description">Description</label>
+        </span>
+      </div>
+    </div>
+  </form>
+
+  <p-button label="Save" [rounded]="true" severity="success" (onClick)="save()"></p-button>
+</div>
